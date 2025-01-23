@@ -1,10 +1,6 @@
 import * as React from 'react';
 import { HashRouter, Routes, Route } from "react-router-dom";
-import { Yellow } from "./pages/Yellow";
-import { Red } from './pages/Red';
-import Landing from './pages/Landing';
 import Home from './pages/Home';
-import Reading from './pages/Reading';
 import StoryPage from './pages/StoryPage';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -102,14 +98,9 @@ export default function App() {
   return (
     <HashRouter basename={"/"}>
       <Routes>
-        <Route  path="/"  element={<Red/>} />
-
-        <Route path="/story/:id" element={<StoryPage/>} /> 
+        <Route  path="/"  element={<Home/>} />
         <Route path="/home" element={<Home/>} /> 
-        <Route path="/yellow" element={ButtonAppBar(Yellow())} /> 
-        <Route path="/red" element={ButtonAppBar(Red())} /> 
-        <Route path="/landing" element={ButtonAppBar(Landing())} /> 
-        <Route path="/reading" element={<Reading/>} /> 
+        <Route path="/story/:id" element={<StoryPage/>} /> 
       </Routes>
     </HashRouter>
   );

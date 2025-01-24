@@ -5,4 +5,5 @@ export default interface Chapter {
     ending: string
     imageUrl: string
     isLoading: boolean
+    isTyping: boolean
 }

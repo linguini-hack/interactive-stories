@@ -20,16 +20,22 @@ const ChapterCard = ({
   onNextChapterSelect
 }:ChapterCardState) => {
 
+
+  console.log(chapterNode);
   const [typingDone, setTypingDone] = useState<boolean>(isTyping?false:true);
   const messagesEndRef = useRef<null | HTMLDivElement>(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }
+
+  useEffect(() => {
+    setTypingDone(isTyping?false:true);
+  }, []);
     
   useEffect(() => {
     scrollToBottom()
-  }, [typingDone]);
+  }, [typingDone, isTyping]);
 
   const renderLoadingChapter = (
       <Box 
@@ -53,9 +59,12 @@ const ChapterCard = ({
           <div ref={messagesEndRef} ></div>
       </Box>
   );
+
+  console.log(chapterNode.key, "isTyping", isTyping);
+  console.log(chapterNode.key, "typingDone", typingDone);
   
   if(isLoading){
-      return renderLoadingChapter;
+    return renderLoadingChapter;
   }
 
   const choices = (chapterNode.choices && chapterNode.choices.length>0)?

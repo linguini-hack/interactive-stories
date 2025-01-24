@@ -4,51 +4,56 @@ import React, { useState, useEffect } from 'react';
 import { Container, IconButton, Link } from "@mui/material"
 import { ArrowBack } from "@mui/icons-material"
 import { useLocation } from 'react-router-dom';
-import StoryNode from "../interfaces/Chapter";
+import ChapterNode from "../interfaces/Chapter";
 import ChapterCard from "../components/ChapterCard";
+
+const delay = async (ms: number) =>{
+  await new Promise<void>(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
+}
 
 export default function StoryPage() {
 
   const buildLoadingChapter = (key:string) =>{
     return {
-      key:key,
+      key:"loading-"+key,
       story:"", 
       choices:[], 
       ending:"", 
       imageUrl:"", 
-      isLoading:true
+      isLoading:true,
+      isTyping:false
     }
   };
 
-  const [chapterMap, setChapterMap] = useState<Map<String,StoryNode>>(new Map());
-  const [chapters, setChapters] = useState<StoryNode[]>([]);
-
-  const delay = async (ms: number) =>{
-    await new Promise<void>(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
-  }
+  const [chapterMap, setChapterMap] = useState<Map<String,ChapterNode>>(new Map());
+  const [chapters, setChapters] = useState<ChapterNode[]>([buildLoadingChapter("0")]);
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      await delay(2000);
-      const response = await fetch("stories/homes/story.json")
-      if (!response.ok) {
-        throw new Error("Failed to fetch posts")
-      }
-      const dataList: StoryNode[] = await response.json()
-      const nodeMap = new Map();
-      for (const node of dataList) {
-        node.imageUrl = `/stories/homes/${node.key}.jpg`; //await fetchImage(`/stories/homes/${node.key}.jpg`);
-        nodeMap.set(node.key, node);
-      }
-
-      setChapterMap(nodeMap);
-      setChapters([buildLoadingChapter("0")]);
-      await delay(2000);
-      setChapters([nodeMap.get("0")]);
-    }
-
-    fetchPosts()
+    (async () => setChapterMap(await fetchPosts()))();
   }, []);
+
+  useEffect(() => {
+    if(chapterMap.size==0){
+      return;
+    }
+    (async () => await addChapter("0"))();
+  }, [chapterMap]);
+
+
+  const fetchPosts = async ()=>{
+    await delay(2000);
+    const response = await fetch("stories/homes/story.json")
+    if (!response.ok) {
+      throw new Error("Failed to fetch posts")
+    }
+    const dataList: ChapterNode[] = await response.json()
+    const nodeMap = new Map();
+    for (const node of dataList) {
+      node.imageUrl = `/stories/homes/${node.key}.jpg`; //await fetchImage(`/stories/homes/${node.key}.jpg`);
+      nodeMap.set(node.key, node);
+    }
+    return nodeMap;
+  }
 
   const fetchImage = async (imageUrl:string) => {
     const res = await fetch(imageUrl);
@@ -65,9 +70,14 @@ export default function StoryPage() {
   const addChapter = async (key:string) => {
     addLoadingchapter(key);
     await delay(2000);
-    const fetchedStoryNode = chapterMap.get(key)!
-    const parentCards = chapters.filter((card)=> card.key.length<key.length);
-    parentCards.push(fetchedStoryNode);
+    const fetchedChapterNode = chapterMap.get(key)!
+    const parentCards = chapters.filter((card)=> !card.key.startsWith("loading-") && card.key.length<key.length).map(card=>{
+      card.isTyping=false;
+      return card;
+    });
+    fetchedChapterNode.isTyping=true;
+    fetchedChapterNode.imageUrl = await fetchImage(fetchedChapterNode.imageUrl);
+    parentCards.push(fetchedChapterNode);
     setChapters(parentCards);
   };
 
@@ -87,9 +97,9 @@ export default function StoryPage() {
       </Link>
       {chapters.map((card, index) => 
         <ChapterCard 
-          key={index+""}
+          key={card.key}
           isLoading={card.isLoading}
-          isTyping={true}
+          isTyping={card.isTyping}
           chapterNode={card}
           onNextChapterSelect={(key)=>addChapter(key)} />
       )}

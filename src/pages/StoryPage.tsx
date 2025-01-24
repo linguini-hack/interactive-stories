@@ -1,11 +1,15 @@
 "use client"
 
-import React, { useState, useEffect } from 'react';
-import { Container, IconButton, Link } from "@mui/material"
+import React, { useState, useRef, useEffect } from 'react';
+import { Container, IconButton, Link, Box } from "@mui/material"
 import { ArrowBack } from "@mui/icons-material"
 import { useLocation } from 'react-router-dom';
 import ChapterNode from "../interfaces/Chapter";
 import ChapterCard from "../components/ChapterCard";
+
+
+import html2canvas from "html2canvas";
+// import { saveAs } from "file-saver";
 
 const delay = async (ms: number) =>{
   await new Promise<void>(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
@@ -79,7 +83,20 @@ export default function StoryPage() {
     fetchedChapterNode.imageUrl = await fetchImage(fetchedChapterNode.imageUrl);
     parentCards.push(fetchedChapterNode);
     setChapters(parentCards);
+    // await handleSaveDataClick();
   };
+
+  // const hiddenDataContentRef = useRef<null | HTMLElement>(null);
+  // const handleSaveDataClick = async () => {
+  //   const canvas = await html2canvas(hiddenDataContentRef.current!, {
+  //     onclone: (clonedDoc) => {
+  //       clonedDoc.getElementById("hidden-container")!.style.display = "block";
+  //     }
+  //   });
+  //   const tempImage = canvas.toDataURL("image/jpeg");
+  //   console.log(tempImage);
+  //   // saveAs(tempImage, "data.jpg");
+  // };
 
   return (
     <Container 
@@ -95,6 +112,11 @@ export default function StoryPage() {
           <ArrowBack />
         </IconButton>
       </Link>
+      <Box
+          // id="hidden-container"
+          // className="data-container-hidden"
+          // ref={hiddenDataContentRef}
+        >
       {chapters.map((card, index) => 
         <ChapterCard 
           key={card.key}
@@ -103,6 +125,7 @@ export default function StoryPage() {
           chapterNode={card}
           onNextChapterSelect={(key)=>addChapter(key)} />
       )}
+      </Box>
     </Container>
   )
 }

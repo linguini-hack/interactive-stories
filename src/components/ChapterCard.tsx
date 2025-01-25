@@ -193,7 +193,7 @@ const ChapterCard = ({
       mb:10,
     }}>
       <Paper elevation={3} sx={{borderRadius:'12px', overflow:'hidden'}}>
-        <Box
+        {chapterNode.imageUrl && (<Box
           component="img"
           sx={{
             width: "100%",
@@ -202,7 +202,7 @@ const ChapterCard = ({
           }}
           src={chapterNode.imageUrl}
           alt={chapterNode.key}
-        />
+        />)}
         {storyAudio && <button onClick={togglePlay}>{play ? 'Pause' : 'Play'}</button>}
         <Box sx={{ p: 3 }}>
           <Typography variant="body1" paragraph>

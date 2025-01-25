@@ -1,53 +1,62 @@
-import React from "react"
-import { Box, useMediaQuery, useTheme, Paper } from "@mui/material"
-import Carousel from "react-material-ui-carousel"
-import StoryCard from "./StoryCard"
+"use client"
 
-// Mock data for main stories
+import { useState } from "react"
+import { Card, Button, Container, IconButton, Link, CardContent } from "@mui/material"
+// import { Card, CardContent } from "@/components/ui/card"
+// import { Button } from "@/components/ui/button"
+// import { ChevronLeft, ChevronRight } from "lucide-react"
+// import Image from "next/image"
 
-const imageUrl = "https://placehold.co/1200x600";
-const mainStories = [
-  { id: "1", title: "A Journey Through Time", image: imageUrl },
-  { id: "2", title: "The Hidden City", image: imageUrl },
-  { id: "3", title: "Echoes of the Past", image: imageUrl },
-  { id: "4", title: "Whispers in the Wind", image: imageUrl },
-  { id: "5", title: "The Last Frontier", image: imageUrl },
+const stories = [
+  { id: 1, title: "The Lost Cat", language: "Spanish", image: "/placeholder.svg?height=200&width=150" },
+  { id: 2, title: "A Day in Paris", language: "French", image: "/placeholder.svg?height=200&width=150" },
+  { id: 3, title: "The Magic Wand", language: "German", image: "/placeholder.svg?height=200&width=150" },
+  { id: 4, title: "Sushi Adventure", language: "Japanese", image: "/placeholder.svg?height=200&width=150" },
+  { id: 5, title: "Roman Holiday", language: "Italian", image: "/placeholder.svg?height=200&width=150" },
 ]
 
-export default function StoryCarousel() {
-  const theme = useTheme()
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"))
+export function StoryCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % stories.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + stories.length) % stories.length)
+  }
 
   return (
-    <Paper elevation={3}>
-      <Carousel
-        animation="slide"
-        navButtonsAlwaysVisible
-        navButtonsProps={{
-          style: {
-            backgroundColor: "rgba(0,0,0,0.5)",
-            borderRadius: 0,
-          },
-        }}
-        indicatorContainerProps={{
-          style: {
-            marginTop: "20px",
-            marginBottom: "20px",
-          },
-        }}
-      >
-        {mainStories.map((story) => (
-          <Box key={story.id} sx={{ display: "flex", justifyContent: "center" }}>
-            <StoryCard
-              id={story.id}
-              title={story.title}
-              image={story.image}
-              maxWidth={isSmallScreen ? "100%" : "1200px"}
-            />
-          </Box>
+    <div className="relative w-full max-w-4xl mx-auto">
+      <div className="flex overflow-hidden">
+        {stories.slice(currentIndex, currentIndex + 3).map((story) => (
+          <Card key={story.id} className="w-1/3 mx-2 flex-shrink-0 bg-gray-800 text-gray-100">
+            <CardContent className="p-4">
+              <img
+                src={story.image || "/placeholder.svg"}
+                alt={story.title}
+                width={150}
+                height={200}
+                className="w-full h-48 object-cover rounded-md mb-2"
+              />
+              <h3 className="font-semibold text-lg text-purple-300">{story.title}</h3>
+              <p className="text-sm text-gray-400">{story.language}</p>
+            </CardContent>
+          </Card>
         ))}
-      </Carousel>
-    </Paper>
+      </div>
+      <Button
+        className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-gray-100"
+        onClick={prevSlide}
+      >
+        {/* <ChevronLeft className="h-4 w-4" /> */}
+      </Button>
+      <Button
+        className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-gray-100"
+        onClick={nextSlide}
+      >
+        {/* <ChevronRight className="h-4 w-4" /> */}
+      </Button>
+    </div>
   )
 }
-

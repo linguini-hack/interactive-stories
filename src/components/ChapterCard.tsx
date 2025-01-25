@@ -179,7 +179,7 @@ const ChapterCard = ({
         label={choice} 
         variant="outlined" 
         sx={{ color: 'text.primary' }}
-        onClick={()=>onNextChapterSelect(chapterNode.key+"."+index)}/>):
+        onClick={()=>onNextChapterSelect(chapterNode.key+index)}/>):
         null;
 
   const ending = choices==null? endModal():null;

@@ -6,6 +6,7 @@ import { ArrowBack } from "@mui/icons-material"
 import { useLocation } from 'react-router-dom';
 import ChapterNode from "../interfaces/Chapter";
 import ChapterCard from "../components/ChapterCard";
+import ChatGpt from "../components/ChatGpt";
 
 const delay = async (ms: number) =>{
   await new Promise<void>(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
@@ -42,13 +43,20 @@ export default function StoryPage() {
 
   const fetchPosts = async ()=>{
     // await delay(500);
-    const response = await fetch("stories/homes/story.json")
+    const chatGpt = new ChatGpt();
+    const userStory = await chatGpt.generateStory("SiderMan in india");
+    const storyGraph = JSON.parse(userStory.choices[0].message.content);
+
+    const userGeneratedList: ChapterNode[] = storyGraph["graph"];
+    console.log("userGeneratedList", userGeneratedList, "storyGraph", JSON.stringify(userGeneratedList));
+
+    const response = await fetch("stories/superman/story.json")
     if (!response.ok) {
       throw new Error("Failed to fetch posts")
     }
-    const dataList: ChapterNode[] = await response.json()
+    const dataList: ChapterNode[] = (await response.json())["graph"]
     const nodeMap = new Map();
-    for (const node of dataList) {
+    for (const node of userGeneratedList) {
       node.imageUrl = `/stories/homes/${node.key}.jpg`; //await fetchImage(`/stories/homes/${node.key}.jpg`);
       nodeMap.set(node.key, node);
     }
@@ -69,14 +77,14 @@ export default function StoryPage() {
 
   const addLastChapter = async (key:string) => {
     addLoadingchapter(key);
-    await delay(500);
+    // await delay(500);
     const fetchedChapterNode = chapterMap.get(key)!
     const parentCards = chapters.filter((card)=> !card.key.startsWith("loading-") && card.key.length<key.length).map(card=>{
       card.isTyping=false;
       return card;
     });
     fetchedChapterNode.isTyping=true;
-    fetchedChapterNode.imageUrl = await fetchImage(fetchedChapterNode.imageUrl);
+    // fetchedChapterNode.imageUrl = await fetchImage(fetchedChapterNode.imageUrl);
     parentCards.push(fetchedChapterNode);
     setChapters(parentCards);
   };
@@ -87,14 +95,14 @@ export default function StoryPage() {
       return;
     }
     addLoadingchapter(key);
-    await delay(500);
+    // await delay(500);
     const fetchedChapterNode = chapterMap.get(key)!
     const parentCards = chapters.filter((card)=> !card.key.startsWith("loading-") && card.key.length<key.length).map(card=>{
       card.isTyping=false;
       return card;
     });
     fetchedChapterNode.isTyping=true;
-    fetchedChapterNode.imageUrl = await fetchImage(fetchedChapterNode.imageUrl);
+    // fetchedChapterNode.imageUrl = await fetchImage(fetchedChapterNode.imageUrl);
     parentCards.push(fetchedChapterNode);
     setChapters(parentCards);
   };

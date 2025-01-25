@@ -5,7 +5,7 @@ import { Container, IconButton, Link, Typography, Box, Button } from "@mui/mater
 import { ArrowBack } from "@mui/icons-material"
 import { useLocation } from 'react-router-dom';
 import ChapterNode from "../interfaces/Chapter";
-import ChapterCard from "../components/ChapterCard";
+import NewChapterCard from "../components/NewChapterCard";
 import ChatGpt from "../components/ChatGpt";
 import SecondaryStories from "../components/SecondaryStories"
 import {StoryCarousel} from "../components/StoryCarousel"
@@ -287,7 +287,7 @@ export default function CreatePage() {
         </ModalContent>
         </Modal>
       {chapters.map((card, index) => 
-        <ChapterCard 
+        <NewChapterCard 
           key={card.key}
           isLoading={card.isLoading}
           isTyping={card.isTyping}

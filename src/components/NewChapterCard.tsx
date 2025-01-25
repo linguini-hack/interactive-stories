@@ -33,7 +33,7 @@ const style = {
   alignItems: "center", 
 };
 
-const ChapterCard = ({
+const NewChapterCard = ({
   chapterNode, 
   isLoading, 
   isTyping, 
@@ -248,4 +248,4 @@ const ChapterCard = ({
   );
 };
 
-export default ChapterCard;
+export default NewChapterCard;

@@ -12,6 +12,8 @@ import {
 import { Toggle } from '@base-ui-components/react/toggle';
 import { ToggleGroup } from '@base-ui-components/react/toggle-group';
 import Grid from '@mui/material/Grid2';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import DoneIcon from '@mui/icons-material/Done';
 
 // import { Button } from "@/components/ui/button"
 // import { Input } from "@/components/ui/input"
@@ -55,10 +57,10 @@ export function CreateForm({onCreated}:FormState) {
 
   const BasicForm=()=>{
     return (<form onSubmit={handleSubmit} className="space-y-6">
-
         <Typography id="modal-modal-title" variant="h5" component="h5" align="center">
           What kind of story would you like to create?
         </Typography>
+        <br/>
         <Input
             sx={{
                 display: 'flex',
@@ -71,24 +73,28 @@ export function CreateForm({onCreated}:FormState) {
             placeholder="e.g., Adventure, Romance, Mystery"
             required
         />
-        <br/>
-        <Grid container spacing={2}>
-        <Grid size={{ xs: 4, md: 4 }}>
-        <Button type="submit" >
-            French
-        </Button>
-        </Grid>
-        <Grid size={{ xs: 4, md: 4 }}>
-        <Button type="submit" >
-            Spanish
-        </Button>
-        </Grid>
-        <Grid size={{ xs: 4, md: 4 }}>
-        <Button type="submit" >
-            Hindi
-        </Button>
-        </Grid>
-        </Grid>
+        <Box
+            sx={{ 
+                flexGrow: 1,   
+                justifyContent: "center",
+                alignItems: "center", 
+                alignContent:"center",
+                mb:10,
+
+               
+                    display: 'flex',
+                    flexDirection: 'column',
+                    '& > *': {
+                      m: 1,
+                    },
+                
+            }}>
+            <ButtonGroup variant="outlined" aria-label="Basic button group">
+            <Button>Hindi</Button>
+            <Button startIcon={<DoneIcon/>}>French</Button>
+            <Button>Japanese</Button>
+            </ButtonGroup>
+        </Box>
         <label htmlFor="storyContent" >
             Enter your prompt in 20 words
         </label>

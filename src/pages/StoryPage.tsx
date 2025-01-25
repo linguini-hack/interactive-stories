@@ -41,7 +41,7 @@ export default function StoryPage() {
 
 
   const fetchPosts = async ()=>{
-    await delay(2000);
+    // await delay(500);
     const response = await fetch("stories/homes/story.json")
     if (!response.ok) {
       throw new Error("Failed to fetch posts")
@@ -67,9 +67,27 @@ export default function StoryPage() {
     setChapters(parentCards);
   }
 
-  const addChapter = async (key:string) => {
+  const addLastChapter = async (key:string) => {
     addLoadingchapter(key);
-    await delay(2000);
+    await delay(500);
+    const fetchedChapterNode = chapterMap.get(key)!
+    const parentCards = chapters.filter((card)=> !card.key.startsWith("loading-") && card.key.length<key.length).map(card=>{
+      card.isTyping=false;
+      return card;
+    });
+    fetchedChapterNode.isTyping=true;
+    fetchedChapterNode.imageUrl = await fetchImage(fetchedChapterNode.imageUrl);
+    parentCards.push(fetchedChapterNode);
+    setChapters(parentCards);
+  };
+
+  const addChapter = async (key:string) => {
+    if(key=="replay"){
+      await addChapter("0");
+      return;
+    }
+    addLoadingchapter(key);
+    await delay(500);
     const fetchedChapterNode = chapterMap.get(key)!
     const parentCards = chapters.filter((card)=> !card.key.startsWith("loading-") && card.key.length<key.length).map(card=>{
       card.isTyping=false;

@@ -10,7 +10,7 @@ const Typewriter = ({text, onDone}:{text:string, onDone:Function}) => {
       const timeout = setTimeout(() => {
         setCurrentText(prevText => prevText + text[currentIndex]);
         setCurrentIndex(prevIndex => prevIndex + 1);
-      }, 20);
+      }, 10);
   
       return () => clearTimeout(timeout);
     }else{

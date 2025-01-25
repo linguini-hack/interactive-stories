@@ -2,6 +2,7 @@ import * as React from 'react';
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import StoryPage from './pages/StoryPage';
+import CreatePage from './pages/CreatePage';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -101,6 +102,7 @@ export default function App() {
       <Routes>
         <Route  path="/"  element={<Home/>} />
         <Route path="/home" element={<Home/>} /> 
+        <Route path="/create" element={<CreatePage/>} /> 
         <Route path="/story/:id" element={<StoryPage/>} /> 
       </Routes>
     </HashRouter>

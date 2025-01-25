@@ -4,7 +4,7 @@ import { useState } from "react"
 // import { Button } from "@/components/ui/button"
 // import { Input } from "@/components/ui/input"
 // import { Textarea } from "@/components/ui/textarea"
-import { Container, Button, IconButton, Input, Link } from "@mui/material"
+import { Typography, Container, Button, IconButton, Input, Link, Box } from "@mui/material"
 
 export function CreateForm() {
   const [storyType, setStoryType] = useState("")
@@ -21,22 +21,36 @@ export function CreateForm() {
   }
 
   return (
+    <Box> 
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div>
-        <label htmlFor="storyType" className="block text-sm font-medium text-gray-300 mb-1">
-          What kind of story would you like to create?
-        </label>
-        <Input
-          id="storyType"
-          value={storyType}
-          onChange={(e) => setStoryType(e.target.value)}
-          placeholder="e.g., Adventure, Romance, Mystery"
-          required
-          className="bg-gray-700 text-gray-100 border-gray-600 focus:border-purple-500"
-        />
-      </div>
-      <div>
-        <label htmlFor="storyContent" className="block text-sm font-medium text-gray-300 mb-1">
+        <Box
+        
+        sx={{ 
+            flexGrow: 1,   
+            justifyContent: "center",
+            alignItems: "center", 
+            mb:10,
+            }}
+        >
+            <Typography id="modal-modal-title" variant="h5" component="h5" align="center">
+              What kind of story would you like to create?
+            </Typography>
+            <br/>
+            <Input
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
+                id="storyType"
+                value={storyType}
+                onChange={(e) => setStoryType(e.target.value)}
+                placeholder="e.g., Adventure, Romance, Mystery"
+                required
+            />
+        </Box>
+        <div>
+        <label htmlFor="storyContent" >
           Enter your prompt in 20 words
         </label>
         {/* <Textarea
@@ -53,5 +67,6 @@ export function CreateForm() {
         Submit Story
       </Button>
     </form>
+    </Box>
   )
 }

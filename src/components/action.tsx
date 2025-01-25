@@ -19,7 +19,6 @@ export function CallToAction() {
             className="border-indigo-600 text-indigo-300 hover:bg-indigo-700 hover:text-white"
           >
             <Link href="/create">
-              
               Create Story
             </Link>
           </Button>

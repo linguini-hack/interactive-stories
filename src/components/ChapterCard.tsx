@@ -5,6 +5,8 @@ import Grid from '@mui/material/Grid2';
 import Skeleton from '@mui/material/Skeleton';
 import Typewriter from "./Typewriter";
 import Chapter from "../interfaces/Chapter";
+import { Tooltip } from 'react-tooltip'
+import StoryMeaning from './StoryMeaning';
 
 interface ChapterCardState {
   chapterNode:Chapter
@@ -98,7 +100,7 @@ const ChapterCard = ({
         />
         <Box sx={{ p: 3 }}>
           <Typography variant="body1" paragraph>
-            {typingDone && (<span>{chapterNode.story}</span>)}
+            {typingDone && (<StoryMeaning text={chapterNode.story} />)}
             {!typingDone && (
               <Typewriter 
                 text={chapterNode.story}
@@ -113,7 +115,7 @@ const ChapterCard = ({
                 color: 'text.primary', 
                 padding: "10px",
                 opacity: !typingDone ? "0" : "1",
-                transition: "all 2s",
+                transition: "all 5s",
                 visibility: !typingDone ? "hidden" : "visible",
               }}>
               What should happen next?

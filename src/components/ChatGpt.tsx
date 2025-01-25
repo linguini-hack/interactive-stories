@@ -1,6 +1,6 @@
 export default class ChatGpt{
 
-    generateStory = async (text:string)=>{
+    generateStory = async (text:string, language:string)=>{
 
         const prompt = `
             Create the entire graph of interactive story game with followin instructions.
@@ -9,7 +9,8 @@ export default class ChatGpt{
             Each paragraph node should have two choices, with the maximum 10 words. 
             The branch should follow notations of 0 for left and 1 for the right. 
             Return the output in the raw json to be used by API. consider this json format {\"graph"\:[{ \"key\": \"0\", \"story\": \"choices\": [\"choices_1\",\"choices_2\"]}]}. 
-            Write a story using this user input: ${text}.`
+            Write a story using this user input: ${text}.
+            Create the story in the language: ${language}.`
         
         const promt1 = `
         Construct an interactive story outline in JSON format based on the one-line plot provided by the user. 
@@ -63,7 +64,8 @@ export default class ChatGpt{
                 },     // Continue for other terminal nodes 
                 ]
             } 
-        Instructions to AI:  Ensure that each node’s narrative is engaging and maintains continuity from the user's initial plot. Choices should be actionable and directly derived from the scene, promoting logical story progression. Maintain strict adherence to word limits to ensure clarity and brevity.`
+        Instructions to AI:  Ensure that each node’s narrative is engaging and maintains continuity from the user's initial plot. Choices should be actionable and directly derived from the scene, promoting logical story progression. Maintain strict adherence to word limits to ensure clarity and brevity.
+        Create the story in the language: ${language}`
         const response = await fetch("https://api.openai.com/v1/chat/completions",
             {
                 headers: {

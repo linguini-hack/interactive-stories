@@ -29,6 +29,7 @@ export default function StoryPage() {
   const [chapterMap, setChapterMap] = useState<Map<String, ChapterNode>>(new Map());
   const [chapters, setChapters] = useState<ChapterNode[]>([buildLoadingChapter("0")]);
   const [storyId, setStoryId] = useState<string | null>(storyIdFromPath!); // Initialize with derived value
+  const [language, setLanguage] = useState("english");
 
   useEffect(() => {
     if (storyIdFromPath !== storyId) {
@@ -40,7 +41,20 @@ export default function StoryPage() {
     if (!storyId) return;
 
     (async () => {
-      setChapterMap(await fetchPosts(storyId));
+      const response = await fetch(`stories/${storyId}/story.json`);
+      if (!response.ok) {
+        throw new Error("Failed to fetch posts");
+      }
+      const jsonData = await response.json();
+      const languageData = jsonData["language"];
+      const dataList: ChapterNode[] = jsonData["graph"];
+      const nodeMap = new Map();
+      for (const node of dataList) {
+        node.imageUrl = `/stories/${storyId}/${node.key}.jpg`;
+        nodeMap.set(node.key, node);
+      }
+      setChapterMap(nodeMap);
+      setLanguage(languageData);
     })();
   }, [storyId]);
 
@@ -110,6 +124,7 @@ export default function StoryPage() {
           isLoading={card.isLoading}
           isTyping={card.isTyping}
           chapterNode={card}
+          language={language}
           onNextChapterSelect={(key) => addChapter(key)} />
       )}
     </Container>

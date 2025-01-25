@@ -7,6 +7,7 @@ import Typewriter from "./Typewriter";
 import Chapter from "../interfaces/Chapter";
 import { Tooltip } from 'react-tooltip'
 import StoryMeaning from './StoryMeaning';
+import TextToSpeech from './TextToSpeech';
 
 interface ChapterCardState {
   chapterNode:Chapter
@@ -43,6 +44,29 @@ const ChapterCard = ({
   console.log(chapterNode);
   const [typingDone, setTypingDone] = useState<boolean>(isTyping?false:true);
   const messagesEndRef = useRef<null | HTMLDivElement>(null);
+  const [play, setPlay] = useState<boolean>(false);
+  const [storyAudio, setStoryAudio] = useState<HTMLAudioElement | null>(null);
+  const textToSpeech = new TextToSpeech();
+
+  // var audio:HTMLAudioElement|null;
+
+
+  // const togglePlay = () => {
+  //   setPlay(!play);
+  //   play?audio!.play():audio!.pause();
+  // }
+
+  const togglePlay = () => {
+    if (!storyAudio) return; // Ensure audio is not null
+    setPlay((prev) => {
+      if (!prev) {
+        storyAudio.play();
+      } else {
+        storyAudio.pause();
+      }
+      return !prev;
+    });
+  };
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -50,10 +74,26 @@ const ChapterCard = ({
 
   useEffect(() => {
     setTypingDone(isTyping?false:true);
+    textToSpeech.fetchAudio(chapterNode.story + " What should happen next?").then((audioBase64)=>{
+      console.log("fetchAudio", audioBase64);
+      const newAudio = new Audio("data:audio/mp3;base64," + audioBase64);
+      setStoryAudio(newAudio); // Set the audio in state
+    });
   }, []);
+
+  // const fetchAudio = async(key:string, text:string)=>{
+  //   const audioBase64 = await textToSpeech.fetchAudio(text).then((audioBase64)=>{
+  //     console.log("fetchAudio", audioBase64);
+  //   });
+  //   const newAudio = new Audio("data:audio/mp3;base64," + audioBase64);
+  //   setStoryAudio(newAudio); // Set the audio in state
+  // }
     
   useEffect(() => {
     scrollToBottom()
+    // if(typingDone){
+    //   fetchAudio(chapterNode.key, chapterNode.story);
+    // }
   }, [typingDone, isTyping]);
 
   const renderLoadingChapter = (
@@ -163,6 +203,7 @@ const ChapterCard = ({
           src={chapterNode.imageUrl}
           alt={chapterNode.key}
         />
+        {storyAudio && <button onClick={togglePlay}>{play ? 'Pause' : 'Play'}</button>}
         <Box sx={{ p: 3 }}>
           <Typography variant="body1" paragraph>
             {typingDone && (<StoryMeaning text={chapterNode.story} />)}

@@ -44,7 +44,7 @@ export default function StoryPage() {
   const fetchPosts = async ()=>{
     // await delay(500);
     const chatGpt = new ChatGpt();
-    const userStory = await chatGpt.generateStory("SiderMan in india");
+    const userStory = await chatGpt.generateStory("Conversation with bengalurlu auto driver. The auto driver prefer to talk in native language and negotiate a lot.");
     const storyGraph = JSON.parse(userStory.choices[0].message.content);
 
     const userGeneratedList: ChapterNode[] = storyGraph["graph"];
@@ -92,6 +92,9 @@ export default function StoryPage() {
   const addChapter = async (key:string) => {
     if(key=="replay"){
       await addChapter("0");
+      return;
+    }
+    if(!chapterMap.has(key)){
       return;
     }
     addLoadingchapter(key);

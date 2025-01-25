@@ -25,7 +25,7 @@ export default class ChatGpt{
         Each subsequent node description should also be precisely 30 words and offer two further choices. 
         Node 2 (0.0.0, 0.0.1, 0.1.0, 0.1.1): Develop the story further by detailing the consequences of previous choices. 
         Limit each description to 30 words and end with two choices leading to terminal nodes. 
-        Terminal Nodes (e.g., 0.0.0.0, 0.0.0.1): Conclude each story arc with a resolution in exactly 30 words. 
+        Terminal Nodes (e.g., 0.0.0.0, 0.0.0.1): Conclude each story arc with a resolution in exactly 30 words. Should not contain chocies, and contains the ending line with the prase. 
         These nodes should not include any further choices. Language and Choice Guidelines:  
         Story Language: Use simple to moderate difficulty words commonly found in everyday conversation to ensure accessibility and engagement. 
         Choice Descriptions: Each choice should be no more than 10 words, clearly reflecting the possible actions or decisions that follow from the scene described. 

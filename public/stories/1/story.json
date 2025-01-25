@@ -1,206 +1,580 @@
 {
-    "language":"english",
-    "graph":
-[
-    {
-        "key": "0",
-        "story": "Sherlock Holmes finds himself in a quaint Parisian café, sipping espresso while reading a cryptic letter. The note, written in elegant French, warns of a \"shadow that devours the city of light.\" Intrigued, Holmes notices a faint scent of lavender and a smudge of ink—clues pointing to the sender. The letter ends with a plea: \"Meet me at the Eiffel Tower at midnight. Time is running out.",
-        "choices": [
-            "Investigate the lavender scent at a nearby perfume shop",
-            "Head straight to the Eiffel Tower to meet the sender"
-        ]
-    },
-    {
-        "key": "0.0",
-        "story": "Holmes follows the lavender scent to a small perfume shop tucked in a Parisian alley. The shopkeeper, a nervous woman, reveals the scent is from a rare oil sold only to aristocrats. She mentions a wealthy client who recently purchased it—a Baroness with ties to the Eiffel Tower. Holmes notices a hidden compartment behind the counter, but the shopkeeper grows uneasy",
-        "choices": [
-            "Press the shopkeeper for more information about the Baroness",
-            "Investigate the hidden compartment"
-        ]
-    },
-    {
-        "key": "0.1",
-        "story": "At the Eiffel Tower, Holmes waits under the moonlight. A cloaked figure approaches but flees when Holmes calls out. Chasing the figure, Holmes finds a dropped handkerchief with the initials \"B.D.\" and a faint trace of gunpowder. Nearby, a suspicious man in a trench coat watches from the shadows, clutching a briefcase",
-        "choices": [
-            "Follow the cloaked figure into the dark alleys",
-            "Confront the man with the briefcase"
-        ]
-    },
-    {
-        "key": "0.0.0",
-        "story": "Holmes presses the shopkeeper, who reluctantly reveals the Baroness lives in a château outside Paris. She warns him to stay away, claiming the Baroness is dangerous. Holmes deduces the Baroness is involved in a smuggling ring. He leaves for the château, where he finds the gates locked and guards patrolling the grounds",
-        "choices": [
-            "Sneak into the château through the gardens.",
-            "Return to Paris to gather more evidence."
-        ]
-    },
-    {
-        "key": "0.0.1",
-        "story": "Holmes opens the hidden compartment, finding a ledger detailing illegal shipments of rare perfumes. The ledger mentions a \"Midnight Exchange\" at the Eiffel Tower. Suddenly, the shopkeeper pulls a knife, demanding Holmes leave. Holmes disarms her but realizes the Baroness’s network is more extensive than he thought.",
-        "choices": [
-            "Head to the Eiffel Tower to intercept the exchange",
-            "Report the findings to the Paris police"
-        ]
-    },
-    {
-        "key": "0.1.0",
-        "story": "Holmes pursues the cloaked figure into the winding alleys. He corners the figure, who turns out to be a young woman. She reveals she’s the Baroness’s daughter, trying to expose her mother’s crimes. She hands Holmes a key to a secret vault beneath the Eiffel Tower, where the \"shadow\" is stored.",
-        "choices": [
-            "Trust the woman and investigate the vault.",
-            "Demand she come with him to the police"
-        ]
-    },
-    {
-        "key": "0.1.1",
-        "story": "Holmes confronts the man, who opens the briefcase to reveal stolen artifacts. The man claims he’s working for the Baroness, who plans to sell the artifacts at midnight. He offers Holmes a cut of the profits to stay silent. Holmes notices a strange symbol on the artifacts—a mark linked to a secret society",
-        "choices": [
-            "Pretend to accept the deal to gather more information",
-            "Arrest the man and seize the artifacts"
-        ]
-    },
-    {
-        "key": "0.0.0.0",
-        "story": "Holmes sneaks into the gardens, avoiding guards. He overhears the Baroness discussing the \"shadow\" with a masked figure. The shadow is revealed to be a stolen weapon of mass destruction. Holmes must act quickly to prevent its use",
-        "choices": [
-            "Sabotage the weapon before it’s moved.",
-            "Escape to alert the authorities."
-        ]
-    },
-    {
-        "key": "0.0.0.1",
-        "story": "Holmes returns to Paris, gathering evidence from the ledger. He learns the \"Midnight Exchange\" is a cover for smuggling the weapon out of France. He rushes to the Eiffel Tower, but the Baroness’s men are already there, preparing the shipment",
-        "choices": [
-            "Confront the Baroness directly",
-            "Set a trap to intercept the shipment"
-        ]
-    },
-    {
-        "key": "0.0.1.0",
-        "story": "Holmes arrives at the Eiffel Tower, finding the Baroness overseeing the exchange. He confronts her, but she reveals the weapon is already armed. Holmes must decide whether to disarm it or evacuate the city",
-        "choices": [
-            "Attempt to disarm the weapon",
-            "Warn the city and evacuate"
-        ]
-    },
-    {
-        "key": "0.0.1.1",
-        "story": "Holmes reports the findings, but the police are hesitant to act without proof. Holmes realizes he must stop the Baroness himself. He returns to the Eiffel Tower, where the exchange is underway",
-        "choices": [
-            "Infiltrate the exchange alone",
-            "Convince the police to raid the location"
-        ]
-    },
-    {
-        "key": "0.1.0.0",
-        "story": "Holmes unlocks the vault beneath the Eiffel Tower, finding the weapon. The Baroness’s daughter helps him disarm it, but the Baroness arrives with armed guards. Holmes must think fast",
-        "choices": [
-            "Use the weapon’s mechanisms against the Baroness.",
-            "Surrender to buy time for the daughter to escape"
-        ]
-    },
-    {
-        "key": "0.1.0.1",
-        "story": "Holmes takes the daughter to the police, but they dismiss her claims. Holmes realizes the Baroness has infiltrated the police force. He must act alone to stop her",
-        "choices": [
-            "Return to the Eiffel Tower to confront the Baroness",
-            "Gather public evidence to expose her."
-        ]
-    },
-    {
-        "key": "0.1.1.0",
-        "story": "Holmes pretends to accept the deal, gaining access to the Baroness’s inner circle. He learns the weapon is hidden in the Eiffel Tower. He must decide how to proceed",
-        "choices": [
-            "Sabotage the weapon from within",
-            "Gather evidence to expose the operation"
-        ]
-    },
-    {
-        "key": "0.1.1.1",
-        "story": "Holmes arrests the man and seizes the artifacts, but the Baroness’s network remains intact. Holmes realizes he must act quickly to stop the weapon’s activation",
-        "choices": [
-            "Track down the Baroness’s hideout.",
-            "Use the artifacts as bait to lure her out."
-        ]
-    },
-    {
-        "key": "0.0.0.0.0",
-        "title": "The Hero of Paris",
-        "story": "Holmes successfully disarms the weapon in the Eiffel Tower’s vault, using his keen intellect to reverse its mechanisms. The Baroness is captured, and Paris celebrates Holmes as a hero, though he remains vigilant, knowing the shadow of crime never truly disappears."
-    },
-    {
-        "key": "0.0.0.0.1",
-        "title": "The Tragic Sacrifice",
-        "story": "Holmes fails to disarm the weapon but manages to evacuate the city, minimizing casualties. The Baroness escapes, leaving Holmes to grapple with the lives lost and the weight of his choices."
-    },
-    {
-        "key": "0.0.0.1.0",
-        "title": "The Ultimate Sacrifice",
-        "story": "In a desperate bid to stop the weapon, Holmes triggers its self-destruct sequence, knowing it will cost him his life. The explosion is contained, saving Paris, and Holmes is posthumously honored as a hero, with Watson receiving a final letter expressing his resolve."
-    },
-    {
-        "key": "0.0.0.1.1",
-        "title": "The Baroness’s Revenge",
-        "story": "Holmes disarms the weapon and captures the Baroness, but she escapes during the chaos. Vowing revenge, she disappears into the shadows, leaving Holmes on edge and preparing for her next move."
-    },
-    {
-        "key": "0.0.1.0.0",
-        "title": "The Exposed Conspiracy",
-        "story": "Holmes exposes the Baroness’s network but fails to stop the weapon in time, leading to partial destruction. Though the Baroness is arrested, the damage to Paris serves as a grim reminder of the cost of justice."
-    },
-    {
-        "key": "0.0.1.0.1",
-        "title": "The Failed Mission",
-        "story": "Holmes is captured by the Baroness, and the weapon is activated, devastating Paris. The city is left in ruins, and Holmes’s failure haunts him as he languishes in captivity."
-    },
-    {
-        "key": "0.0.1.1.0",
-        "title": "The Public Hero",
-        "story": "Holmes uses public evidence to expose the Baroness, rallying the city against her. Though the weapon is destroyed in the process, Holmes is celebrated as a hero, and the Baroness’s network is dismantled."
-    },
-    {
-        "key": "0.0.1.1.1",
-        "title": "The Silent Victory",
-        "story": "Holmes stops the weapon quietly, preventing mass panic, but the Baroness’s network remains intact. Though Paris is safe, Holmes knows the fight is far from over."
-    },
-    {
-        "key": "0.1.0.0.0",
-        "title": "The Betrayal",
-        "story": "Holmes is betrayed by the Baroness’s daughter, who reveals his plans to her mother. The weapon is activated, and Holmes is captured, leaving Paris to face the consequences."
-    },
-    {
-        "key": "0.1.0.0.1",
-        "title": "The Hidden Truth",
-        "story": "Holmes uncovers the weapon’s location but is ambushed and killed before he can stop it. The truth dies with him, and the weapon’s fate remains a mystery."
-    },
-    {
-        "key": "0.1.0.1.0",
-        "title": "The Police Raid",
-        "story": "Holmes convinces the police to raid the Eiffel Tower, but the weapon is activated during the chaos. The resulting explosion devastates Paris, and Holmes is left to mourn the lives lost."
-    },
-    {
-        "key": "0.1.0.1.1",
-        "title": "The Baroness’s Fall",
-        "story": "Holmes captures the Baroness, but the weapon is lost in the process, its location unknown. Though the Baroness is brought to justice, the threat of the weapon lingers."
-    },
-    {
-        "key": "0.1.1.0.0",
-        "title": "The Daughter’s Redemption",
-        "story": "The Baroness’s daughter helps Holmes stop the weapon, redeeming herself in the process. Though the Baroness escapes, Holmes gains a valuable ally in the fight against her network."
-    },
-    {
-        "key": "0.1.1.0.1",
-        "title": "The Artifact Trap",
-        "story": "Holmes uses the artifacts to lure the Baroness into a trap, but she activates the weapon remotely. The explosion destroys part of Paris, and Holmes is left to rebuild."
-    },
-    {
-        "key": "0.1.1.1.0",
-        "title": "The Château Showdown",
-        "story": "Holmes confronts the Baroness at her château, but the weapon is already en route to Paris. Though he captures the Baroness, the weapon’s activation leaves the city in peril."
-    },
-    {
-        "key": "0.1.1.1.1",
-        "title": "The Final Letter",
-        "story": "Holmes leaves a final letter for Watson, detailing his failure to stop the weapon and his regrets. The letter becomes a testament to his dedication, even in the face of defeat"
+    "language": "english",
+    "graph": [
+        {
+            "key": "0",
+            "story": "Sherlock Holmes finds himself in a quaint Parisian café, sipping espresso while reading a cryptic letter. The note, written in elegant French, warns of a \"shadow that devours the city of light.\" Intrigued, Holmes notices a faint scent of lavender and a smudge of ink—clues pointing to the sender. The letter ends with a plea: \"Meet me at the Eiffel Tower at midnight. Time is running out.",
+            "choices": [
+                "Investigate the lavender scent at a nearby perfume shop",
+                "Head straight to the Eiffel Tower to meet the sender"
+            ]
+        },
+        {
+            "key": "0.0",
+            "story": "Holmes follows the lavender scent to a small perfume shop tucked in a Parisian alley. The shopkeeper, a nervous woman, reveals the scent is from a rare oil sold only to aristocrats. She mentions a wealthy client who recently purchased it—a Baroness with ties to the Eiffel Tower. Holmes notices a hidden compartment behind the counter, but the shopkeeper grows uneasy",
+            "choices": [
+                "Press the shopkeeper for more information about the Baroness",
+                "Investigate the hidden compartment"
+            ]
+        },
+        {
+            "key": "0.1",
+            "story": "At the Eiffel Tower, Holmes waits under the moonlight. A cloaked figure approaches but flees when Holmes calls out. Chasing the figure, Holmes finds a dropped handkerchief with the initials \"B.D.\" and a faint trace of gunpowder. Nearby, a suspicious man in a trench coat watches from the shadows, clutching a briefcase",
+            "choices": [
+                "Follow the cloaked figure into the dark alleys",
+                "Confront the man with the briefcase"
+            ]
+        },
+        {
+            "key": "0.0.0",
+            "story": "Holmes presses the shopkeeper, who reluctantly reveals the Baroness lives in a château outside Paris. She warns him to stay away, claiming the Baroness is dangerous. Holmes deduces the Baroness is involved in a smuggling ring. He leaves for the château, where he finds the gates locked and guards patrolling the grounds",
+            "choices": [
+                "Sneak into the château through the gardens.",
+                "Return to Paris to gather more evidence."
+            ]
+        },
+        {
+            "key": "0.0.1",
+            "story": "Holmes opens the hidden compartment, finding a ledger detailing illegal shipments of rare perfumes. The ledger mentions a \"Midnight Exchange\" at the Eiffel Tower. Suddenly, the shopkeeper pulls a knife, demanding Holmes leave. Holmes disarms her but realizes the Baroness’s network is more extensive than he thought.",
+            "choices": [
+                "Head to the Eiffel Tower to intercept the exchange",
+                "Report the findings to the Paris police"
+            ]
+        },
+        {
+            "key": "0.1.0",
+            "story": "Holmes pursues the cloaked figure into the winding alleys. He corners the figure, who turns out to be a young woman. She reveals she’s the Baroness’s daughter, trying to expose her mother’s crimes. She hands Holmes a key to a secret vault beneath the Eiffel Tower, where the \"shadow\" is stored.",
+            "choices": [
+                "Trust the woman and investigate the vault.",
+                "Demand she come with him to the police"
+            ]
+        },
+        {
+            "key": "0.1.1",
+            "story": "Holmes confronts the man, who opens the briefcase to reveal stolen artifacts. The man claims he’s working for the Baroness, who plans to sell the artifacts at midnight. He offers Holmes a cut of the profits to stay silent. Holmes notices a strange symbol on the artifacts—a mark linked to a secret society",
+            "choices": [
+                "Pretend to accept the deal to gather more information",
+                "Arrest the man and seize the artifacts"
+            ]
+        },
+        {
+            "key": "0.0.0.0",
+            "story": "Holmes sneaks into the gardens, avoiding guards. He overhears the Baroness discussing the \"shadow\" with a masked figure. The shadow is revealed to be a stolen weapon of mass destruction. Holmes must act quickly to prevent its use",
+            "choices": [
+                "Sabotage the weapon before it’s moved.",
+                "Escape to alert the authorities."
+            ]
+        },
+        {
+            "key": "0.0.0.1",
+            "story": "Holmes returns to Paris, gathering evidence from the ledger. He learns the \"Midnight Exchange\" is a cover for smuggling the weapon out of France. He rushes to the Eiffel Tower, but the Baroness’s men are already there, preparing the shipment",
+            "choices": [
+                "Confront the Baroness directly",
+                "Set a trap to intercept the shipment"
+            ]
+        },
+        {
+            "key": "0.0.1.0",
+            "story": "Holmes arrives at the Eiffel Tower, finding the Baroness overseeing the exchange. He confronts her, but she reveals the weapon is already armed. Holmes must decide whether to disarm it or evacuate the city",
+            "choices": [
+                "Attempt to disarm the weapon",
+                "Warn the city and evacuate"
+            ]
+        },
+        {
+            "key": "0.0.1.1",
+            "story": "Holmes reports the findings, but the police are hesitant to act without proof. Holmes realizes he must stop the Baroness himself. He returns to the Eiffel Tower, where the exchange is underway",
+            "choices": [
+                "Infiltrate the exchange alone",
+                "Convince the police to raid the location"
+            ]
+        },
+        {
+            "key": "0.1.0.0",
+            "story": "Holmes unlocks the vault beneath the Eiffel Tower, finding the weapon. The Baroness’s daughter helps him disarm it, but the Baroness arrives with armed guards. Holmes must think fast",
+            "choices": [
+                "Use the weapon’s mechanisms against the Baroness.",
+                "Surrender to buy time for the daughter to escape"
+            ]
+        },
+        {
+            "key": "0.1.0.1",
+            "story": "Holmes takes the daughter to the police, but they dismiss her claims. Holmes realizes the Baroness has infiltrated the police force. He must act alone to stop her",
+            "choices": [
+                "Return to the Eiffel Tower to confront the Baroness",
+                "Gather public evidence to expose her."
+            ]
+        },
+        {
+            "key": "0.1.1.0",
+            "story": "Holmes pretends to accept the deal, gaining access to the Baroness’s inner circle. He learns the weapon is hidden in the Eiffel Tower. He must decide how to proceed",
+            "choices": [
+                "Sabotage the weapon from within",
+                "Gather evidence to expose the operation"
+            ]
+        },
+        {
+            "key": "0.1.1.1",
+            "story": "Holmes arrests the man and seizes the artifacts, but the Baroness’s network remains intact. Holmes realizes he must act quickly to stop the weapon’s activation",
+            "choices": [
+                "Track down the Baroness’s hideout.",
+                "Use the artifacts as bait to lure her out."
+            ]
+        },
+        {
+            "key": "0.0.0.0.0",
+            "title": "The Hero of Paris",
+            "story": "Holmes successfully disarms the weapon in the Eiffel Tower’s vault, using his keen intellect to reverse its mechanisms. The Baroness is captured, and Paris celebrates Holmes as a hero, though he remains vigilant, knowing the shadow of crime never truly disappears."
+        },
+        {
+            "key": "0.0.0.0.1",
+            "title": "The Tragic Sacrifice",
+            "story": "Holmes fails to disarm the weapon but manages to evacuate the city, minimizing casualties. The Baroness escapes, leaving Holmes to grapple with the lives lost and the weight of his choices."
+        },
+        {
+            "key": "0.0.0.1.0",
+            "title": "The Ultimate Sacrifice",
+            "story": "In a desperate bid to stop the weapon, Holmes triggers its self-destruct sequence, knowing it will cost him his life. The explosion is contained, saving Paris, and Holmes is posthumously honored as a hero, with Watson receiving a final letter expressing his resolve."
+        },
+        {
+            "key": "0.0.0.1.1",
+            "title": "The Baroness’s Revenge",
+            "story": "Holmes disarms the weapon and captures the Baroness, but she escapes during the chaos. Vowing revenge, she disappears into the shadows, leaving Holmes on edge and preparing for her next move."
+        },
+        {
+            "key": "0.0.1.0.0",
+            "title": "The Exposed Conspiracy",
+            "story": "Holmes exposes the Baroness’s network but fails to stop the weapon in time, leading to partial destruction. Though the Baroness is arrested, the damage to Paris serves as a grim reminder of the cost of justice."
+        },
+        {
+            "key": "0.0.1.0.1",
+            "title": "The Failed Mission",
+            "story": "Holmes is captured by the Baroness, and the weapon is activated, devastating Paris. The city is left in ruins, and Holmes’s failure haunts him as he languishes in captivity."
+        },
+        {
+            "key": "0.0.1.1.0",
+            "title": "The Public Hero",
+            "story": "Holmes uses public evidence to expose the Baroness, rallying the city against her. Though the weapon is destroyed in the process, Holmes is celebrated as a hero, and the Baroness’s network is dismantled."
+        },
+        {
+            "key": "0.0.1.1.1",
+            "title": "The Silent Victory",
+            "story": "Holmes stops the weapon quietly, preventing mass panic, but the Baroness’s network remains intact. Though Paris is safe, Holmes knows the fight is far from over."
+        },
+        {
+            "key": "0.1.0.0.0",
+            "title": "The Betrayal",
+            "story": "Holmes is betrayed by the Baroness’s daughter, who reveals his plans to her mother. The weapon is activated, and Holmes is captured, leaving Paris to face the consequences."
+        },
+        {
+            "key": "0.1.0.0.1",
+            "title": "The Hidden Truth",
+            "story": "Holmes uncovers the weapon’s location but is ambushed and killed before he can stop it. The truth dies with him, and the weapon’s fate remains a mystery."
+        },
+        {
+            "key": "0.1.0.1.0",
+            "title": "The Police Raid",
+            "story": "Holmes convinces the police to raid the Eiffel Tower, but the weapon is activated during the chaos. The resulting explosion devastates Paris, and Holmes is left to mourn the lives lost."
+        },
+        {
+            "key": "0.1.0.1.1",
+            "title": "The Baroness’s Fall",
+            "story": "Holmes captures the Baroness, but the weapon is lost in the process, its location unknown. Though the Baroness is brought to justice, the threat of the weapon lingers."
+        },
+        {
+            "key": "0.1.1.0.0",
+            "title": "The Daughter’s Redemption",
+            "story": "The Baroness’s daughter helps Holmes stop the weapon, redeeming herself in the process. Though the Baroness escapes, Holmes gains a valuable ally in the fight against her network."
+        },
+        {
+            "key": "0.1.1.0.1",
+            "title": "The Artifact Trap",
+            "story": "Holmes uses the artifacts to lure the Baroness into a trap, but she activates the weapon remotely. The explosion destroys part of Paris, and Holmes is left to rebuild."
+        },
+        {
+            "key": "0.1.1.1.0",
+            "title": "The Château Showdown",
+            "story": "Holmes confronts the Baroness at her château, but the weapon is already en route to Paris. Though he captures the Baroness, the weapon’s activation leaves the city in peril."
+        },
+        {
+            "key": "0.1.1.1.1",
+            "title": "The Final Letter",
+            "story": "Holmes leaves a final letter for Watson, detailing his failure to stop the weapon and his regrets. The letter becomes a testament to his dedication, even in the face of defeat"
+        }
+    ],
+    "meanings": {
+        "Sherlock": "Sherlock",
+        "Holmes": "Holmes",
+        "finds": "trouve",
+        "in": "dans",
+        "a": "un",
+        "quaint": "pittoresque",
+        "Parisian": "parisien",
+        "café": "café",
+        "sipping": "sirotant",
+        "espresso": "espresso",
+        "while": "pendant",
+        "reading": "lisant",
+        "cryptic": "cryptique",
+        "letter": "lettre",
+        "The": "La",
+        "note": "note",
+        "written": "écrite",
+        "elegant": "élégant",
+        "French": "français",
+        "warns": "avertit",
+        "of": "de",
+        "shadow": "ombre",
+        "that": "qui",
+        "devours": "dévore",
+        "city": "ville",
+        "light": "lumière",
+        "Intrigued": "Intrigué",
+        "notices": "remarque",
+        "faint": "légère",
+        "scent": "odeur",
+        "lavender": "lavande",
+        "and": "et",
+        "smudge": "tache",
+        "ink": "encre",
+        "clues": "indices",
+        "pointing": "pointant",
+        "to": "vers",
+        "sender": "expéditeur",
+        "ends": "se termine",
+        "with": "avec",
+        "plea": "supplication",
+        "Meet": "Rencontrez",
+        "me": "moi",
+        "at": "à",
+        "Eiffel Tower": "Tour Eiffel",
+        "midnight": "minuit",
+        "Time": "Le temps",
+        "is": "est",
+        "running": "en train de",
+        "Investigate": "Enquêter",
+        "the": "la",
+        "nearby": "proche",
+        "perfume": "parfum",
+        "shop": "boutique",
+        "Head": "Aller",
+        "straight": "directement",
+        "follows": "suit",
+        "small": "petite",
+        "tucked": "nichée",
+        "alley": "ruelle",
+        "shopkeeper": "commerçante",
+        "nervous": "nerveuse",
+        "woman": "femme",
+        "rare": "rare",
+        "oil": "huile",
+        "sold": "vendue",
+        "only": "seulement",
+        "aristocrats": "aristocrates",
+        "She": "Elle",
+        "mentions": "mentionne",
+        "wealthy": "riche",
+        "client": "client",
+        "recently": "récemment",
+        "purchased": "achetée",
+        "Baroness": "Baronne",
+        "ties": "liens",
+        "compartment": "compartiment",
+        "behind": "derrière",
+        "counter": "comptoir",
+        "grows": "devient",
+        "uneasy": "mal à laise",
+        "Press": "Presser",
+        "for": "pour",
+        "more": "plus",
+        "information": "informations",
+        "about": "à propos",
+        "At": "À",
+        "waits": "attend",
+        "under": "sous",
+        "moonlight": "clair de lune",
+        "cloaked": "encapuchonné",
+        "figure": "figure",
+        "approaches": "approche",
+        "but": "mais",
+        "flees": "fuit",
+        "when": "quand",
+        "calls": "appelle",
+        "out": "dehors",
+        "Chasing": "Poursuivant",
+        "dropped": "tombé",
+        "handkerchief": "mouchoir",
+        "initials": "initiales",
+        "B.D.": "B.D.",
+        "trace": "trace",
+        "gunpowder": "poudre à canon",
+        "suspicious": "suspect",
+        "man": "homme",
+        "trench": "tranchée",
+        "coat": "manteau",
+        "watches": "regarde",
+        "from": "depuis",
+        "shadows": "ombres",
+        "clutching": "serrant",
+        "briefcase": "mallette",
+        "Follow": "Suivre",
+        "into": "dans",
+        "dark": "sombre",
+        "alleys": "ruelles",
+        "opens": "ouvre",
+        "ledger": "registre",
+        "illegal": "illégal",
+        "shipments": "expéditions",
+        "Midnight": "Minuit",
+        "Exchange": "Échange",
+        "Suddenly": "Soudainement",
+        "pulls": "tire",
+        "knife": "couteau",
+        "demanding": "exigeant",
+        "leave": "partir",
+        "realizes": "réalise",
+        "network": "réseau",
+        "extensive": "étendu",
+        "than": "que",
+        "thought": "pensé",
+        "pursues": "poursuit",
+        "winding": "sinueux",
+        "corners": "coins",
+        "young": "jeune",
+        "turns": "se révèle",
+        "mother’s": "mère",
+        "crimes": "crimes",
+        "hands": "donne",
+        "key": "clé",
+        "secret": "secret",
+        "vault": "coffre",
+        "beneath": "sous",
+        "stored": "stocké",
+        "Trust": "Faire confiance",
+        "investigate": "enquêter",
+        "Demand": "Exiger",
+        "come": "venir",
+        "police": "police",
+        "stolen": "volé",
+        "artifacts": "artefacts",
+        "working": "travaillant",
+        "sell": "vendre",
+        "offers": "propose",
+        "cut": "part",
+        "profits": "bénéfices",
+        "stay": "rester",
+        "silent": "silencieux",
+        "strange": "étrange",
+        "symbol": "symbole",
+        "linked": "lié",
+        "society": "société",
+        "Pretend": "Faire semblant",
+        "accept": "accepter",
+        "deal": "accord",
+        "gather": "recueillir",
+        "Arrest": "Arrêter",
+        "seize": "saisir",
+        "sneaks": "se faufile",
+        "avoiding": "évitant",
+        "overhears": "entend",
+        "discussing": "discutant",
+        "weapon": "arme",
+        "mass": "masse",
+        "must": "doit",
+        "act": "agir",
+        "quickly": "rapidement",
+        "prevent": "empêcher",
+        "use": "utilisation",
+        "Sabotage": "Saboter",
+        "before": "avant",
+        "moved": "déplacé",
+        "Escape": "Séchapper",
+        "alert": "alerter",
+        "authorities": "autorités",
+        "gathering": "recueillant",
+        "evidence": "preuves",
+        "learns": "apprend",
+        "cover": "couverture",
+        "smuggling": "contrebande",
+        "rushes": "se précipite",
+        "there": "là",
+        "shipment": "expédition",
+        "Confront": "Confronter",
+        "directly": "directement",
+        "Set": "Mettre",
+        "trap": "piège",
+        "intercept": "intercepter",
+        "overseeing": "supervisant",
+        "reveals": "révèle",
+        "whether": "si",
+        "reports": "rapporte",
+        "findings": "découvertes",
+        "hesitant": "hésitant",
+        "proof": "preuve",
+        "stop": "arrêter",
+        "himself": "lui-même",
+        "returns": "retourne",
+        "underway": "en cours",
+        "Infiltrate": "Infiltre",
+        "alone": "seul",
+        "Convince": "Convaincre",
+        "raid": "raid",
+        "location": "lieu",
+        "unlocks": "déverrouille",
+        "finding": "trouvant",
+        "disarm": "désarmer",
+        "arrives": "arrive",
+        "armed": "armé",
+        "guards": "gardes",
+        "think": "penser",
+        "fast": "vite",
+        "Use": "Utiliser",
+        "mechanisms": "mécanismes",
+        "Surrender": "Se rendre",
+        "buy": "acheter",
+        "time": "temps",
+        "escape": "échapper",
+        "takes": "prend",
+        "dismiss": "rejeter",
+        "claims": "revendications",
+        "infiltrated": "infiltré",
+        "force": "force",
+        "public": "public",
+        "expose": "exposer",
+        "pretends": "fait semblant",
+        "gains": "gagne",
+        "access": "accès",
+        "inner": "intérieur",
+        "circle": "cercle",
+        "hidden": "caché",
+        "decide": "décider",
+        "proceed": "procéder",
+        "within": "à lintérieur",
+        "operation": "opération",
+        "arrests": "arrête",
+        "intact": "intact",
+        "Track": "Pister",
+        "down": "en bas",
+        "hideout": "cachette",
+        "bait": "appât",
+        "lure": "leurrer",
+        "successfully": "avec succès",
+        "disarms": "désarme",
+        "using": "utilisant",
+        "keen": "aiguisé",
+        "intellect": "intellect",
+        "reverse": "inverser",
+        "celebrates": "célèbre",
+        "vigilant": "vigilant",
+        "never": "jamais",
+        "truly": "vraiment",
+        "manage": "gérer",
+        "evacuate": "évacuer",
+        "minimizing": "minimisant",
+        "casualties": "victimes",
+        "escapes": "séchappe",
+        "grapple": "lutter",
+        "lives": "vies",
+        "weight": "poids",
+        "choices": "choix",
+        "desperate": "désespéré",
+        "bid": "tentative",
+        "triggers": "déclenche",
+        "self-destruct": "autodestruction",
+        "sequence": "séquence",
+        "knowing": "sachant",
+        "cost": "coût",
+        "life": "vie",
+        "explosion": "explosion",
+        "contained": "contenue",
+        "saving": "sauver",
+        "posthumously": "à titre posthume",
+        "honored": "honoré",
+        "Watson": "Watson",
+        "receiving": "recevant",
+        "final": "final",
+        "expressing": "exprimant",
+        "resolve": "résolution",
+        "chaos": "chaos",
+        "Vowing": "Jurant",
+        "revenge": "vengeance",
+        "disappears": "disparaît",
+        "edge": "bord",
+        "preparing": "préparant",
+        "next": "prochain",
+        "move": "mouvement",
+        "exposes": "expose",
+        "fails": "échoue",
+        "leading": "menant",
+        "partial": "partiel",
+        "destruction": "destruction",
+        "arrested": "arrêté",
+        "damage": "dommage",
+        "serves": "sert",
+        "grim": "sombre",
+        "reminder": "rappel",
+        "justice": "justice",
+        "captured": "capturé",
+        "devastating": "dévastant",
+        "left": "laissé",
+        "ruins": "ruines",
+        "failure": "échec",
+        "haunts": "hante",
+        "languishes": "languit",
+        "captivity": "captivité",
+        "rallying": "ralliant",
+        "against": "contre",
+        "destroyed": "détruit",
+        "celebrated": "célébré",
+        "dismantled": "démantelé",
+        "stops": "arrête",
+        "quietly": "silencieusement",
+        "preventing": "empêchant",
+        "panic": "panique",
+        "safe": "sûr",
+        "far": "loin",
+        "over": "fini",
+        "betrayed": "trahi",
+        "plans": "plans",
+        "activated": "activé",
+        "consequences": "conséquences",
+        "uncovers": "découvre",
+        "ambushed": "embusqué",
+        "killed": "tué",
+        "truth": "vérité",
+        "dies": "meurt",
+        "fate": "destin",
+        "remains": "reste",
+        "mystery": "mystère",
+        "convinces": "convainc",
+        "resulting": "résultant",
+        "devastates": "dévaste",
+        "mourn": "pleurer",
+        "captures": "capture",
+        "lost": "perdu",
+        "process": "processus",
+        "threat": "menace",
+        "lingers": "persiste",
+        "helps": "aide",
+        "redeeming": "rachetant",
+        "valuable": "précieux",
+        "ally": "allié",
+        "fight": "combat",
+        "uses": "utilise",
+        "remotely": "à distance",
+        "destroys": "détruit",
+        "part": "partie",
+        "rebuild": "reconstruire",
+        "confronts": "confronte",
+        "already": "déjà",
+        "route": "route",
+        "peril": "péril",
+        "leaves": "laisse",
+        "detailing": "détail",
+        "regrets": "regrets",
+        "testament": "testament",
+        "dedication": "dédication",
+        "face": "face",
+        "defeat": "défaite"
     }
-]
 }

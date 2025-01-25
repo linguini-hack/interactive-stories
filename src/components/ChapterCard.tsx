@@ -5,7 +5,6 @@ import Grid from '@mui/material/Grid2';
 import Skeleton from '@mui/material/Skeleton';
 import Typewriter from "./Typewriter";
 import Chapter from "../interfaces/Chapter";
-import { Tooltip } from 'react-tooltip'
 import StoryMeaning from './StoryMeaning';
 import TextToSpeech from './TextToSpeech';
 
@@ -14,6 +13,7 @@ interface ChapterCardState {
   isLoading:boolean
   isTyping:boolean
   language:string
+  wordMeaning:Map<string,string>
   onNextChapterSelect:(key:string) => void;
 }
 
@@ -54,6 +54,7 @@ const ChapterCard = ({
   isLoading, 
   isTyping, 
   language,
+  wordMeaning,
   onNextChapterSelect
 }:ChapterCardState) => {
 
@@ -204,7 +205,10 @@ const ChapterCard = ({
         {storyAudio && <button onClick={togglePlay}>{play ? 'Pause' : 'Play'}</button>}
         <Box sx={{ p: 3 }}>
           <Typography variant="body1" paragraph>
-            {typingDone && (<StoryMeaning text={chapterNode.story} />)}
+            {typingDone && (<StoryMeaning 
+              text={chapterNode.story} 
+              wordMeaning={wordMeaning}
+            />)}
             {!typingDone && (
               <Typewriter 
                 text={chapterNode.story}

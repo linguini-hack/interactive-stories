@@ -188,6 +188,7 @@ export default function CreatePage() {
           isLoading={card.isLoading}
           isTyping={card.isTyping}
           chapterNode={card}
+          wordMeaning={new Map()}
           language={language}
           onNextChapterSelect={addChapter}
         />

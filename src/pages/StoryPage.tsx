@@ -30,6 +30,7 @@ export default function StoryPage() {
   const [chapters, setChapters] = useState<ChapterNode[]>([buildLoadingChapter("0")]);
   const [storyId, setStoryId] = useState<string | null>(storyIdFromPath!); // Initialize with derived value
   const [language, setLanguage] = useState("english");
+  const [wordMeaning, setWordMeaning] = useState<Map<string, string>>(new Map());
 
   useEffect(() => {
     if (storyIdFromPath !== storyId) {
@@ -48,6 +49,8 @@ export default function StoryPage() {
       const jsonData = await response.json();
       const languageData = jsonData["language"];
       const dataList: ChapterNode[] = jsonData["graph"];
+      const wordMeaningObj:{ [key: string]: string } = jsonData["meanings"];
+      const wordMeaningMap=new Map<string, string>(Object.entries(wordMeaningObj));
       const nodeMap = new Map();
       for (const node of dataList) {
         node.imageUrl = `/stories/${storyId}/${node.key}.jpg`;
@@ -55,6 +58,7 @@ export default function StoryPage() {
       }
       setChapterMap(nodeMap);
       setLanguage(languageData);
+      setWordMeaning(wordMeaningMap);
     })();
   }, [storyId]);
 
@@ -125,6 +129,7 @@ export default function StoryPage() {
           isTyping={card.isTyping}
           chapterNode={card}
           language={language}
+          wordMeaning={wordMeaning}
           onNextChapterSelect={(key) => addChapter(key)} />
       )}
     </Container>

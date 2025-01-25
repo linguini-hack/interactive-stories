@@ -207,7 +207,7 @@ export default function CreatePage() {
   };
 
   const [chapterMap, setChapterMap] = useState<Map<String,ChapterNode>>(new Map());
-  const [chapters, setChapters] = useState<ChapterNode[]>([buildLoadingChapter("0")]);
+  const [chapters, setChapters] = useState<ChapterNode[]>([]);
 
 
   useEffect(() => {
@@ -243,7 +243,7 @@ export default function CreatePage() {
       await addChapter("0");
       return;
     }
-    if(!chapterMap.has(key)){
+    if(!chapterMap.has(key) || chapterMap.size==0){
       return;
     }
     addLoadingchapter(key);
@@ -273,19 +273,7 @@ export default function CreatePage() {
           <ArrowBack />
         </IconButton>
       </Link>
-
-      <Modal
-        disableBackdropClick
-        aria-labelledby="unstyled-modal-title"
-        aria-describedby="unstyled-modal-description"
-        open={open}
-        onClose={handleClose}
-        slots={{ backdrop: StyledBackdrop }}
-      >
-        <ModalContent sx={{ width: 400 }}>
-          <BasicFormControl/>
-        </ModalContent>
-        </Modal>
+      {chapterMap.size==0 && <BasicFormControl/>}
       {chapters.map((card, index) => 
         <NewChapterCard 
           key={card.key}

@@ -1,0 +1,100 @@
+{
+    "graph": [
+        {
+            "key": "0",
+            "story": "Peter Parker, aka SpiderMan, arrives in India during Diwali. The city lights enchant him, yet a surge of unease lingers.",
+            "choices": [
+                "Investigate the unease",
+                "Ignore and explore"
+            ]
+        },
+        {
+            "key": "00",
+            "story": "Choosing to investigate, SpiderMan swings through Mumbai's bustling streets, following a faint, unfamiliar energy pulse.",
+            "choices": [
+                "Trace the energy pulse",
+                "Contact local heroes"
+            ]
+        },
+        {
+            "key": "01",
+            "story": "Choosing to ignore it, SpiderMan explores India's rich culture, visiting bazaars, savoring spicy street foods.",
+            "choices": [
+                "Continue exploring",
+                "Look for SpiderMan fans"
+            ]
+        },
+        {
+            "key": "000",
+            "story": "Tracing the pulse, SpiderMan uncovers a hidden lab where mysterious tech threatens the city.",
+            "choices": [
+                "Confront the scientists",
+                "Report to authorities"
+            ]
+        },
+        {
+            "key": "001",
+            "story": "Seeking allies, SpiderMan finds local heroes skeptical of his foreign identity.",
+            "choices": [
+                "Inspire them to help",
+                "Plead for assistance"
+            ]
+        },
+        {
+            "key": "010",
+            "story": "Delighted fans recognize SpiderMan, gathering eagerly for selfies and tales.",
+            "choices": [
+                "Entertain fans",
+                "Seek local news"
+            ]
+        },
+        {
+            "key": "011",
+            "story": "As SpiderMan roams the city, a fan warns him of shadowy threats against visitors.",
+            "choices": [
+                "Investigate threats",
+                "Ignore the warning"
+            ]
+        },
+        {
+            "key": "0000",
+            "story": "SpiderMan battles the scientists, who control tech that might devastate the city. \"Duty unites us,\" rings in SpiderMan's resolve.",
+            "choices": []
+        },
+        {
+            "key": "0001",
+            "story": "Authorities begin an investigation, but SpiderMan feels time slipping through his fingers. \"Some battles need immediacy,\" he muses.",
+            "choices": []
+        },
+        {
+            "key": "0010",
+            "story": "SpiderMan's acts of courage inspire the heroes, forging an alliance: \"The web of bravery binds us all,\" is their motto.",
+            "choices": []
+        },
+        {
+            "key": "0011",
+            "story": "Pleading works as local heroes rally with famed resilience. \"Unity in diversity,\" rings the promise of India's famous spirit.",
+            "choices": []
+        },
+        {
+            "key": "0100",
+            "story": "SpiderMan shares thrilling tales, seeing hope in young eyes: \"Future heroes need present inspirations\" sparks new determination.",
+            "choices": []
+        },
+        {
+            "key": "0101",
+            "story": "Local news predicts challenges ahead, signaling \"A call to action needs heeding,\" driving a mindful SpiderMan forward.",
+            "choices": []
+        },
+        {
+            "key": "0110",
+            "story": "Investigating threats reveals sinister plans, leading to the discovery that \"Courage demands vigilance,\" guiding SpiderMan onwards.",
+            "choices": []
+        },
+        {
+            "key": "0111",
+            "story": "Ignoring the dangers, SpiderMan dives back into cultural immersion, his heart whispering: \"Risk and wonders coexist.\"",
+            "choices": []
+        }
+    ]
+}

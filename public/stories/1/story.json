@@ -1,3 +1,6 @@
+{
+    "language":"english",
+    "graph":
 [
     {
         "key": "0",
@@ -200,3 +203,4 @@
         "story": "Holmes leaves a final letter for Watson, detailing his failure to stop the weapon and his regrets. The letter becomes a testament to his dedication, even in the face of defeat"
     }
 ]
+}

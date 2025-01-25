@@ -13,6 +13,7 @@ interface ChapterCardState {
   chapterNode:Chapter
   isLoading:boolean
   isTyping:boolean
+  language:string
   onNextChapterSelect:(key:string) => void;
 }
 
@@ -33,28 +34,40 @@ const style = {
   alignItems: "center", 
 };
 
+const getNextText = (language:string)=>{
+  if(language==="english"){
+    return "What should happen next?";
+  } else    if(language==="tamil"){
+    return "அடுத்ததாக என்ன நடக்க வேண்டும்?";
+  } else    if(language==="hindi"){
+    return "आगे क्या होना चाहिए?";
+  } else    if(language==="japanese"){
+    return "次に何が起こるべきですか？";
+  }else    if(language==="french"){
+    return "Que devrait-il se passer ensuite?";
+  }
+  return "What should happen next?";
+}
+
 const ChapterCard = ({
   chapterNode, 
   isLoading, 
   isTyping, 
+  language,
   onNextChapterSelect
 }:ChapterCardState) => {
 
-
-  console.log(chapterNode);
-  const [typingDone, setTypingDone] = useState<boolean>(isTyping?false:true);
+  const nextText = getNextText(language)
   const messagesEndRef = useRef<null | HTMLDivElement>(null);
-  const [play, setPlay] = useState<boolean>(false);
-  const [storyAudio, setStoryAudio] = useState<HTMLAudioElement | null>(null);
   const textToSpeech = new TextToSpeech();
 
-  // var audio:HTMLAudioElement|null;
+  const [typingDone, setTypingDone] = useState<boolean>(isTyping?false:true);
+  const [play, setPlay] = useState<boolean>(false);
+  const [storyAudio, setStoryAudio] = useState<HTMLAudioElement | null>(null);
+  const [open, setOpen] = React.useState(false);
 
-
-  // const togglePlay = () => {
-  //   setPlay(!play);
-  //   play?audio!.play():audio!.pause();
-  // }
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const togglePlay = () => {
     if (!storyAudio) return; // Ensure audio is not null
@@ -80,20 +93,9 @@ const ChapterCard = ({
       setStoryAudio(newAudio); // Set the audio in state
     });
   }, []);
-
-  // const fetchAudio = async(key:string, text:string)=>{
-  //   const audioBase64 = await textToSpeech.fetchAudio(text).then((audioBase64)=>{
-  //     console.log("fetchAudio", audioBase64);
-  //   });
-  //   const newAudio = new Audio("data:audio/mp3;base64," + audioBase64);
-  //   setStoryAudio(newAudio); // Set the audio in state
-  // }
     
   useEffect(() => {
     scrollToBottom()
-    // if(typingDone){
-    //   fetchAudio(chapterNode.key, chapterNode.story);
-    // }
   }, [typingDone, isTyping]);
 
   const renderLoadingChapter = (
@@ -122,10 +124,6 @@ const ChapterCard = ({
   console.log(chapterNode.key, "isTyping", isTyping);
   console.log(chapterNode.key, "typingDone", typingDone);
 
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
   const endModal = ()=>{
     return (<Box>
     <Chip
@@ -148,7 +146,7 @@ const ChapterCard = ({
               variant="h4" 
               component="h4"
               align="center"  sx={{ mt: 2 }}>
-          You learnt <b>123462</b> words today.
+          You learnt <b>126</b> words today.
         </Typography>
         <Box sx={{
           alignItems: "center",
@@ -224,7 +222,7 @@ const ChapterCard = ({
                 transition: "all 5s",
                 visibility: !typingDone ? "hidden" : "visible",
               }}>
-              What should happen next?
+              {nextText}
             </Typography>
           )}
           <Grid

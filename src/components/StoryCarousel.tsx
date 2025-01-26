@@ -29,7 +29,7 @@ function ActionAreaCard({id, title, language, onClick}:{
         <CardMedia
           component="img"
           height="140"
-          image={`/stories/${id}/0.jpg`}
+          image={`stories/${id}/0.jpg`}
           alt="green iguana"
         />
         <CardContent>

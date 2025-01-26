@@ -2,6 +2,7 @@
   "name": "xv-hackathon",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://linguini-hack.github.io/linguini-hack/",
   "dependencies": {
     "@base-ui-components/react": "^1.0.0-alpha.5",
     "@emotion/react": "^11.14.0",

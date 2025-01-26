@@ -75,7 +75,7 @@ export default class ChatGpt{
                 headers: {
                   'Accept': 'application/json',
                   'Content-Type': 'application/json',
-                  'Authorization': 'Bearer '+key //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',
+                  'Authorization': 'Bearer '+key 
                 },
                 method: "POST",
                 body: JSON.stringify({

@@ -44,7 +44,7 @@ export function NavBar() {
               }}
               startIcon={<PenTool />}
               component={Link}
-              href="/#/create"
+              href="#/create"
             >
               Create
             </Button>

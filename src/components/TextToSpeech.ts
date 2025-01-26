@@ -17,7 +17,7 @@ export default class TextToSpeech{
                 headers: {
                   'Accept': 'application/json',
                   'Content-Type': 'application/json',
-                  'xi-api-key': key //'sk_ccd708b647c2b89555cadcf474f89c7a8ce41442d8e54a31'
+                  'xi-api-key': key 
                 },
                 method: "POST",
                 body: JSON.stringify(

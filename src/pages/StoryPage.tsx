@@ -53,7 +53,7 @@ export default function StoryPage() {
       const wordMeaningMap=new Map<string, string>(Object.entries(wordMeaningObj));
       const nodeMap = new Map();
       for (const node of dataList) {
-        node.imageUrl = `/stories/${storyId}/${node.key}.jpg`;
+        node.imageUrl = `stories/${storyId}/${node.key}.jpg`;
         nodeMap.set(node.key, node);
       }
       setChapterMap(nodeMap);
@@ -77,7 +77,7 @@ export default function StoryPage() {
     const dataList: ChapterNode[] = (await response.json());
     const nodeMap = new Map();
     for (const node of dataList) {
-      node.imageUrl = `/stories/${storyId}/${node.key}.jpg`;
+      node.imageUrl = `stories/${storyId}/${node.key}.jpg`;
       nodeMap.set(node.key, node);
     }
     return nodeMap;

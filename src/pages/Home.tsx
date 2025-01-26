@@ -101,7 +101,7 @@ export default function Home() {
 
         <Box
       sx={{
-        py: 20,
+        py: 10,
         backgroundColor: "gray.900",
         textAlign: "center",
       }}

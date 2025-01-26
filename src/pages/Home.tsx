@@ -42,7 +42,7 @@ function CallToAction() {
             color: "primary.light", // Equivalent to purple-300
           }}
         >
-          Start Your Language Learning Journey Today
+          Step into story-driven multi-lingual journeys
         </Typography>
         <Box
           sx={{
@@ -83,7 +83,7 @@ function Footer() {
           px: { xs: 2, sm: 6, lg: 8 },
         }}
       >
-        <Typography>&copy; 2023 Linguini. All rights reserved.</Typography>
+        <Typography>&copy; 2025 Linguini. All rights reserved.</Typography>
       </Box>
     </Box>
   );

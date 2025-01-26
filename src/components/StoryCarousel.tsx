@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 
 const stories = [
   { id: "1", title: "The Lost Case", language: "English", image: "/stories/1/0.jpg" },
-  { id: "2", title: "Superman in chennai", language: "Tamil", image: "/stories/2/0.jpg" },
+  { id: "2", title: "Spiderman in chennai", language: "Tamil", image: "/stories/2/0.jpg" },
   { id: "3", title: "The Magic Wand", language: "Japanese", image: "/stories/3/0.jpg" },
 ]
 

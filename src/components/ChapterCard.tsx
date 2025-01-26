@@ -7,6 +7,14 @@ import Typewriter from "./Typewriter";
 import Chapter from "../interfaces/Chapter";
 import StoryMeaning from './StoryMeaning';
 import TextToSpeech from './TextToSpeech';
+import IconButton from '@mui/material/IconButton';
+import Stack from '@mui/material/Stack';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import PauseCircleOutlinedIcon from '@mui/icons-material/PauseCircleOutlined';
+import PlayCircleOutlinedIcon from '@mui/icons-material/PlayCircleOutlined';
+import AlarmIcon from '@mui/icons-material/Alarm';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
 
 interface ChapterCardState {
   chapterNode:Chapter
@@ -202,8 +210,27 @@ const ChapterCard = ({
           src={chapterNode.imageUrl}
           alt={chapterNode.key}
         />)}
-        {storyAudio && <button onClick={togglePlay}>{play ? 'Pause' : 'Play'}</button>}
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ p: 3, 
+              align:"center",
+              justifyContent: "center",
+              alignItems: "center", }} >
+
+          {storyAudio && <Grid
+            spacing={1}
+            container
+            direction="column"
+            sx={{
+              justifyContent: "center",
+              alignItems: "center",
+              opacity: !typingDone ? "0" : "1",
+              transition: "all 5s",
+              visibility: !typingDone ? "hidden" : "visible",
+            }}> 
+             <IconButton onClick={togglePlay}>
+            {play?<PauseCircleOutlinedIcon />:
+            < PlayCircleOutlinedIcon/>}
+          </IconButton>
+          </Grid>}
           <Typography variant="body1" paragraph>
             {typingDone && (<StoryMeaning 
               text={chapterNode.story} 

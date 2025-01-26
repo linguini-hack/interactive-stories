@@ -119,9 +119,10 @@ export default function CreatePage() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        justifyContent: "center",
         mt:5,
         "& > *": {
-          m: 1,
+          m: 2,
         },
       }}
     >

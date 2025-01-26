@@ -90,21 +90,41 @@ export default function CreatePage() {
     setCreating(2);
   };
 
-  const addChapter = async (key: string) => {
-    if (!chapterMap.has(key) || chapterMap.size === 0) return;
+  const addLoadingchapter = (key: string) => {
+    const parentCards = chapters.filter((card) => card.key.length < key.length);
+    parentCards.push(buildLoadingChapter(key));
+    setChapters(parentCards);
+  };
 
-    const loadingChapter = buildLoadingChapter(key);
-    setChapters((prev) => [...prev.filter((card) => !card.key.startsWith("loading-")), loadingChapter]);
+  const addChapter = async (key: string) => {
+    if (key === "replay") {
+      await addChapter("0");
+      return;
+    }
+    if (!chapterMap.has(key)) {
+      return;
+    }
+    addLoadingchapter(key);
 
     await delay(500);
 
-    const fetchedChapter = chapterMap.get(key)!;
-    setChapters((prev) =>
-      prev
-        .filter((card) => !card.key.startsWith("loading-"))
-        .map((card) => ({ ...card, isTyping: false }))
-        .concat({ ...fetchedChapter, isTyping: true })
-    );
+    // const fetchedChapter = chapterMap.get(key)!;
+
+    const fetchedChapterNode = chapterMap.get(key)!;
+    const parentCards = chapters.filter((card) => !card.key.startsWith("loading-") && card.key.length < key.length).map(card => {
+      card.isTyping = false;
+      return card;
+    });
+    fetchedChapterNode.isTyping = true;
+    parentCards.push(fetchedChapterNode);
+    setChapters(parentCards);
+
+    // setChapters((prev) =>
+    //   prev
+    //     .filter((card) => !card.key.startsWith("loading-"))
+    //     .map((card) => ({ ...card, isTyping: false }))
+    //     .concat({ ...fetchedChapter, isTyping: true })
+    // );
   };
 
   const handleSubmit = () => {

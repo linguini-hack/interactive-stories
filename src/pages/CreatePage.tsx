@@ -160,7 +160,7 @@ export default function CreatePage() {
       )}
       {creating === 0 && (
         <Button variant="contained" size="large" sx={{ mt: 4 }} onClick={handleSubmit}>
-          Submit Story
+          Create Story
         </Button>
       )}
     </Box>

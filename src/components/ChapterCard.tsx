@@ -96,7 +96,7 @@ const ChapterCard = ({
 
   useEffect(() => {
     setTypingDone(isTyping?false:true);
-    textToSpeech.fetchAudio(chapterNode.story + " What should happen next?").then((audioBase64)=>{
+    textToSpeech.fetchAudio(chapterNode.story + " " + nextText).then((audioBase64)=>{
       console.log("fetchAudio", audioBase64);
       const newAudio = new Audio("data:audio/mp3;base64," + audioBase64);
       setStoryAudio(newAudio); // Set the audio in state

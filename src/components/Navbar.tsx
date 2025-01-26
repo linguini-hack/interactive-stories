@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, IconButton, Link, Box } from "@mui/material";
+import { Button, Container, IconButton, Link, Box, Typography } from "@mui/material";
 import { BookOpen, PenTool } from "lucide-react";
 
 export function NavBar() {
@@ -20,9 +20,14 @@ export function NavBar() {
           }}
         >
           <Box sx={{ flexShrink: 0 }}>
-            <Link href="/" sx={{ fontWeight: "bold", fontSize: "2xl", color: "purple.400" }}>
+            <Typography  
+              variant="h5"
+              sx={{ 
+                fontWeight: "bold",  
+                color: "purple.400" 
+              }}>
               Linguini
-            </Link>
+            </Typography>
           </Box>
           <Box
             sx={{

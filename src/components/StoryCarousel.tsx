@@ -1,11 +1,6 @@
 "use client"
 
-import { useState } from "react"
-import { Card, Button, Container, IconButton, Link, CardContent } from "@mui/material"
-// import { Card, CardContent } from "@/components/ui/card"
-// import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-// import Image from "next/image"
+import { Card, CardContent } from "@mui/material"
 import Grid from '@mui/material/Grid2';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
@@ -24,16 +19,20 @@ function ActionAreaCard({id, title, language, onClick}:{
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea
-        onClick={() => onClick(id)}
-      >
+        onClick={() => onClick(id)}>
         <CardMedia
           component="img"
-          height="140"
+          height="auto"
           image={`stories/${id}/0.jpg`}
           alt="green iguana"
+          sx={{
+            objectFit: "cover",
+            aspectRatio:1,
+          }}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div" sx={{color:'oklch(0.827 0.119 306.383)'
+          <Typography gutterBottom variant="h5" component="div" 
+            sx={{color:'oklch(0.827 0.119 306.383)'
           }}>
             {title}
           </Typography>
@@ -56,9 +55,15 @@ export function StoryCarousel() {
             sx={{
               justifyContent: "center",
               alignItems: "center",
+              display:"flex"
             }}> 
 {stories.map((story) => (
-  <Grid size={3}>
+  <Grid size={{ xs: 6, md: 3 }} sx={{
+    justifyContent: "center",
+    alignItems: "center",
+    display:"flex",
+    m:2
+  }}>
           <ActionAreaCard
             key={story.id}
             id={story.id}

@@ -2,23 +2,50 @@
 
 import React from "react"
 import { Container, Typography, Box, Paper } from "@mui/material"
-import SecondaryStories from "../components/SecondaryStories"
-import {StoryCarousel} from "../components/StoryCarousel"
-import { HeroSection } from "../components/HeroSection"
+import { StoryCarousel } from "../components/StoryCarousel"
 import { NavBar } from "../components/Navbar"
-import clsx from 'clsx';
-import { styled, css } from '@mui/system';
-import { Modal as BaseModal } from '@mui/base/Modal';
-import { FormControl, useFormControlContext } from '@mui/base/FormControl';
-import { Input, inputClasses } from '@mui/base/Input';
-import {  Button, IconButton, Link } from "@mui/material"
+import { Button } from "@mui/material"
 
 
-
+function HeroSection() {
+  return (
+    <Box
+      sx={{
+        background: "linear-gradient(to right, #5b21b6, #4338ca, #1d4ed8)",
+        color: "white",
+        py: 8,
+        px: { xs: 2, sm: 6, lg: 8 },
+        textAlign: "center",
+      }}
+    >
+      <Box maxWidth="lg" mx="auto">
+        <Typography
+          variant="h1"
+          sx={{
+            fontSize: { xs: "2rem", md: "2.5rem" },
+            fontWeight: "bold",
+            mb: 2,
+            color: "#DDD6FE",
+          }}>
+          Step into story-driven multi-lingual journeys
+        </Typography>
+        <Typography
+          variant="h6"
+          sx={{
+            fontSize: { xs: "1rem", md: "1.25rem" },
+            mb: 0,
+            color: "#E0E7FF",
+          }}>
+          Immerse yourself in interactive non-native language stories.<br/>Create
+          your own plot.
+        </Typography>
+      </Box>
+    </Box>
+  );
+}
 
 function CallToAction() {
   return (
-  
     <Box
       sx={{
         backgroundColor: "grey.900",
@@ -39,7 +66,8 @@ function CallToAction() {
             fontSize: { xs: "1.75rem", md: "2.25rem" },
             fontWeight: "bold",
             mb: 4,
-            color: "primary.light", // Equivalent to purple-300
+            color: 'oklch(0.827 0.119 306.383)',
+            // color: "primary.light", // Equivalent to purple-300
           }}
         >
           Step into story-driven multi-lingual journeys
@@ -54,9 +82,10 @@ function CallToAction() {
           <Button
             variant="contained"
             size="large"
-            sx={{ mt: 2 }}
-            href="#/create"
-          >
+            sx={{ mt: 2, 
+              color:"black",
+              backgroundColor:'oklch(0.827 0.119 306.383)' }}
+            href="#/create">
             Create Story
           </Button>
         </Box>
@@ -90,15 +119,11 @@ function Footer() {
 }
 
 export default function Home() {
-
-
   return (
     <div className="min-h-screen flex flex-col bg-gray-900">
       <NavBar />
       <main className="flex-grow">
         <HeroSection />
-    
-
         <Box
       sx={{
         py: 10,

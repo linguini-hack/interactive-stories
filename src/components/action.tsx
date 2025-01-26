@@ -7,7 +7,7 @@ export function CallToAction() {
   return (
     <div className="bg-gray-800 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl font-bold mb-8 text-purple-300">Start Your Language Learning Journey Today</h2>
+        <h2 className="text-3xl font-bold mb-8 text-purple-300">Start creating your own multi-lingual stories </h2>
         <div className="flex justify-center space-x-4">
           <Button className="bg-purple-700 hover:bg-purple-800 text-white" >
             <Link href="/">

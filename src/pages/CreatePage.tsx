@@ -82,7 +82,7 @@ export default function CreatePage() {
 
     const nodeMap = new Map();
     chaptersList.forEach((node) => {
-      node.key = node.key.split("").join(".");
+      // node.key = node.key.split("").join(".");
       nodeMap.set(node.key, node);
     });
 

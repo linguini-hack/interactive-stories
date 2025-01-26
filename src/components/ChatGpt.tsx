@@ -120,7 +120,7 @@ export default class ChatGpt{
                     "messages": [
                         {
                             "role": "user",
-                            "content": prompt
+                            "content": promt1
                         }
                     ]
                 })

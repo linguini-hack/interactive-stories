@@ -27,8 +27,8 @@ export function NavBar() {
           <Box
             sx={{
               display: "flex",
-              justifyContent: "center",
-              gap: 2,
+              justifyContent: "end",
+              gap: 0,
               flexGrow: 1,
             }}
           >
@@ -49,7 +49,7 @@ export function NavBar() {
               Create
             </Button>
           </Box>
-          <Box sx={{ flexShrink: 0, width: "6rem" }} />
+          
         </Box>
       </Container>
     </Box>

@@ -1,7 +1,11 @@
 export default class ChatGpt{
 
     generateStory = async (text:string, language:string)=>{
-
+        const key = localStorage.getItem("gptKey");
+        if(key==null){
+            console.error("setup gpt key");
+            return;
+        }
         const prompt = `
             Create the entire graph of interactive story game with followin instructions.
             The height of the graph should be 3, 3th node should be the last chapter ending with tagline. 
@@ -71,7 +75,7 @@ export default class ChatGpt{
                 headers: {
                   'Accept': 'application/json',
                   'Content-Type': 'application/json',
-                  'Authorization': 'Bearer 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',
+                  'Authorization': 'Bearer '+key //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',
                 },
                 method: "POST",
                 body: JSON.stringify({

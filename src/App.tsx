@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
+import KeyPage from './pages/KeyPage';
 import StoryPage from './pages/StoryPage';
 import CreatePage from './pages/CreatePage';
 import AppBar from '@mui/material/AppBar';
@@ -103,6 +104,7 @@ export default function App() {
         <Route  path="/"  element={<Home/>} />
         <Route path="/home" element={<Home/>} /> 
         <Route path="/create" element={<CreatePage/>} /> 
+        <Route path="/keys" element={<KeyPage/>} />
         <Route path="/story/:id" element={<StoryPage/>} /> 
       </Routes>
     </HashRouter>

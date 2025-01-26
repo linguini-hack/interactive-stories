@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { Container, Typography, Box } from "@mui/material"
+import { Container, Typography, Box, Paper } from "@mui/material"
 import SecondaryStories from "../components/SecondaryStories"
 import {StoryCarousel} from "../components/StoryCarousel"
 import { HeroSection } from "../components/HeroSection"
@@ -16,40 +16,112 @@ import {  Button, IconButton, Link } from "@mui/material"
 
 
 
-export default function Home() {
-
-  function CallToAction() {
-    return (
-      <div className="bg-gray-800 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-8 text-purple-300">Start Your Language Learning Journey Today</h2>
-          <div className="flex justify-center space-x-4">
-          <Button variant="contained" size="large" sx={{ mt: 4 }} href="#/create">
+function CallToAction() {
+  return (
+  
+    <Box
+      sx={{
+        backgroundColor: "grey.900",
+        py: 8,
+        textAlign: "center",
+      }}
+    >
+      <Box
+        sx={{
+          maxWidth: "lg",
+          mx: "auto",
+          px: { xs: 2, sm: 6, lg: 8 },
+        }}
+      >
+        <Typography
+          variant="h2"
+          sx={{
+            fontSize: { xs: "1.75rem", md: "2.25rem" },
+            fontWeight: "bold",
+            mb: 4,
+            color: "primary.light", // Equivalent to purple-300
+          }}
+        >
+          Start Your Language Learning Journey Today
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            gap: 2,
+          }}
+        >
+          <Button
+            variant="contained"
+            size="large"
+            sx={{ mt: 2 }}
+            href="#/create"
+          >
             Create Story
           </Button>
-          </div>
-        </div>
-      </div>
-    )
-  }
+        </Box>
+      </Box>
+    </Box>
+  );
+}
+
+
+function Footer() {
+  return (
+    <Box
+      sx={{
+        backgroundColor: "grey.900",
+        color: "gray.300",
+        py: 2,
+        textAlign: "center",
+      }}
+    >
+      <Box
+        sx={{
+          maxWidth: "7xl",
+          mx: "auto",
+          px: { xs: 2, sm: 6, lg: 8 },
+        }}
+      >
+        <Typography>&copy; 2023 Linguini. All rights reserved.</Typography>
+      </Box>
+    </Box>
+  );
+}
+
+export default function Home() {
+
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-900">
       <NavBar />
       <main className="flex-grow">
         <HeroSection />
-        <section className="py-16 bg-gray-900">
-          <h2 className="text-3xl font-bold text-center mb-8 text-purple-300" 
-          >Explore Popular Stories</h2>
-          <StoryCarousel />
-        </section>
+    
+
+        <Box
+      sx={{
+        py: 20,
+        backgroundColor: "gray.900",
+        textAlign: "center",
+      }}
+    >
+      <Typography
+        variant="h2"
+        sx={{
+          fontSize: { xs: "1.75rem", sm: "2.25rem" },
+          fontWeight: "bold",
+          mb: 4,
+          color: 'oklch(0.827 0.119 306.383)', // Equivalent to purple-300
+        }}
+      >
+        Explore Popular Stories
+      </Typography>
+      <StoryCarousel />
+    </Box>
         <CallToAction />
       </main>
-      <footer className="bg-gray-800 text-gray-300 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p>&copy; 2023 Linguini. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   )
 
